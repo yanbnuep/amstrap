@@ -1,0 +1,22 @@
+// Requirements
+// ============
+@import "compass";
+@import "susy";
+@include border-box-sizing;
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  container:1120px,
+  gutter-position: inside,
+  gloabal-box-sizing:border-box
+);
+
+.wrapper{@include container;}
+
+.row{
+	@include clearfix;
+}
+@for $i from 1 through 12 {
+	.col-#{$i} { @include span($i of 12); position: relative;min-height: 1px;}
+
+}
